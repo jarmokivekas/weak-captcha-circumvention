@@ -1,3 +1,4 @@
 #!/bin/bash
 
-bash get_captcha.bash | grep "^[1234567890abcdef]" > tmp.txt && cat tmp.txt && eog captcha0.jpg
+curl -s "${1}" -o captcha.jpg
+bash get_captcha.bash captcha.jpg && eog captcha.jpg
